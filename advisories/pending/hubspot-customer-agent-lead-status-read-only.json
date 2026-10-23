@@ -1,0 +1,26 @@
+{
+  "id": "hubspot-customer-agent-lead-status-read-only",
+  "provider": "hubspot",
+  "title": "hs_customer_agent_lead_status became read-only on 2026-07-13",
+  "summary": "Since 2026-07-13 the contact property hs_customer_agent_lead_status is system-managed by Customer Agent and read-only; writes to it from the CRM Objects APIs, apps, workflows or imports fail with an error. Reads keep working. The notice names no paths; the contacts object path here is where CRM Objects API writes go.",
+  "endpoint": {
+    "method": "*",
+    "path": "/crm/*/objects/contacts/**"
+  },
+  "changeClass": "field-rename",
+  "trigger": {
+    "fields": ["hs_customer_agent_lead_status"]
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-04-15",
+    "url": "https://developers.hubspot.com/changelog/upcoming-breaking-change-customer-agent-lead-status-contact-property"
+  },
+  "effectiveDate": "2026-07-13",
+  "severity": "medium",
+  "migrationNote": "Remove hs_customer_agent_lead_status from contact create/update/batch payloads; write your own lead status to a custom contact property instead, and if you need Customer Agent's value, read hs_customer_agent_lead_status and copy it into that custom property.",
+  "sources": [
+    "https://developers.hubspot.com/changelog/upcoming-breaking-change-customer-agent-lead-status-contact-property"
+  ],
+  "status": "verified"
+}

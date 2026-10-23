@@ -1,0 +1,27 @@
+{
+  "id": "salesforce-standard-volume-platform-events-retired",
+  "provider": "salesforce",
+  "title": "Standard-volume platform events retired on 2026-12-15",
+  "summary": "Salesforce retires standard-volume platform events (legacy custom events, deprecated since Spring '19) on 2026-12-15; from that date you can no longer publish or subscribe to them. High-volume platform events are not affected, so this path pattern matches every REST publish to a __e event, not only standard-volume ones.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/services/data/*/sobjects/*__e"
+  },
+  "changeClass": "version-sunset",
+  "trigger": {
+    "any": true
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2024-07-01",
+    "url": "https://help.salesforce.com/s/articleView?id=002280033&type=1"
+  },
+  "effectiveDate": "2026-12-15",
+  "severity": "high",
+  "migrationNote": "Find events defined as standard-volume (Setup > Platform Events) and convert them to high-volume before 2026-12-15, with the one-step Migrate button (Winter '27) or the PlatformEventMigration Metadata API type; stop publishing and let subscribers drain first, then update flows, triggers and Streaming/Pub/Sub API clients to the high-volume events.",
+  "sources": [
+    "https://help.salesforce.com/s/articleView?id=002280033&type=1",
+    "https://help.salesforce.com/s/articleView?id=000381744&type=1"
+  ],
+  "status": "verified"
+}

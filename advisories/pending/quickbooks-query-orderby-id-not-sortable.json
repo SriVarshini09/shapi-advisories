@@ -1,0 +1,27 @@
+{
+  "id": "quickbooks-query-orderby-id-not-sortable",
+  "provider": "quickbooks",
+  "title": "Id is no longer a sortable field in queries",
+  "summary": "Since 2026-01-27 in production (2025-12-10 in sandbox), the Id field on all Accounting API entities can no longer be used for sorting. Queries with ORDERBY Id may return results that are not correctly sorted, and no error is returned. Pagination that relies on ORDERBY Id with STARTPOSITION can then skip or repeat records.",
+  "endpoint": {
+    "method": "*",
+    "path": "/v3/company/{realmId}/query"
+  },
+  "changeClass": "field-rename",
+  "trigger": {
+    "any": true
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2025-12-01",
+    "url": "https://medium.com/intuitdev/upcoming-changes-to-apis-and-tools-that-may-impact-your-application-df4680ae3535"
+  },
+  "effectiveDate": "2026-01-27",
+  "severity": "high",
+  "migrationNote": "Remove ORDERBY Id from query statements. Sort by another field such as TxnDate where the entity has one (Intuit's suggestion), or sort client-side after fetching. Check incremental syncs that page with STARTPOSITION, and de-duplicate by Id.",
+  "sources": [
+    "https://medium.com/intuitdev/upcoming-changes-to-apis-and-tools-that-may-impact-your-application-df4680ae3535",
+    "https://blogs.intuit.com/2025/12/01/upcoming-changes-to-apis-and-tools-that-may-impact-your-application/"
+  ],
+  "status": "verified"
+}

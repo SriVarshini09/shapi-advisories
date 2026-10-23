@@ -5,7 +5,8 @@
   "license": "CC-BY-4.0",
   "type": "module",
   "scripts": {
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "table": "node scripts/table.mjs"
   },
   "devDependencies": {
     "ajv": "^8.20.0",

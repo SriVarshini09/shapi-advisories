@@ -1,0 +1,27 @@
+{
+  "id": "quickbooks-builder-tier-coreplus-calls-blocked",
+  "provider": "quickbooks",
+  "title": "Builder-tier apps are blocked after 500,000 CorePlus calls a month",
+  "summary": "Since 2025-11-03, Intuit meters CorePlus calls (most data-out calls: reads, queries, company info, reports). Apps on the free Builder tier are capped at 500,000 CorePlus calls per calendar month, and further CorePlus calls are blocked with API errors until the counter resets on the 1st. Intuit does not document the error status code. Core (data-in) calls are not metered.",
+  "endpoint": {
+    "method": "*",
+    "path": "/v3/company/{realmId}/**"
+  },
+  "changeClass": "status-code",
+  "trigger": {
+    "any": true
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": null,
+    "url": "https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq"
+  },
+  "effectiveDate": "2025-11-03",
+  "severity": "medium",
+  "migrationNote": "Check CorePlus usage on the app's Analytics tab. Cut read volume with change data capture, webhooks and caching instead of polling queries and reports. If you will exceed 500,000 a month, subscribe to the Silver tier. The cap lifts within an hour of adding a payment method. Treat sudden errors on read calls late in the month as quota exhaustion, not an outage.",
+  "sources": [
+    "https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq",
+    "https://developer.intuit.com/app/developer/qbo/docs/release-notes/general-release-notes"
+  ],
+  "status": "verified"
+}
