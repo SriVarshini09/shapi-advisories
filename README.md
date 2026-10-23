@@ -74,6 +74,7 @@ One JSON file per advisory in [`advisories/`](advisories), named `<id>.json` and
 - **`trigger`**: what a call site must do to be affected, for example "checks `status === 204`" or "sends `minorversion` below 75". A call site that only calls the endpoint is *exposed*; one that depends on what changed is *affected*.
 - **`firstObserved`**, **`publishedNotice`**, **`effectiveDate`**: when it was seen in the wild, whether and where the provider announced it, and when it takes effect.
 - **`migrationNote`**, **`recipeId`**: how to fix it, and the deterministic fix recipe SHAPI applies, if there is one.
+- **`fix`** (with `recipeId: "apply-fix"`): the exact change, as data. `path` (from and to, for example `/v21.0/` to `/v26.0/`), `query` and `header` change what the code sends; `fields` and `enums` list renamed response fields and enum values. SHAPI applies it and proves it with a generated contract test.
 - **`sources`**, **`status`**: `verified` means checked against a primary source or two independent ones. `unverified` means secondary reports only.
 - **`evidence`** (optional): the before and after responses SHAPI's canaries observed.
 
