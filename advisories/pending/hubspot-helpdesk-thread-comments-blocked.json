@@ -1,0 +1,26 @@
+{
+  "id": "hubspot-helpdesk-thread-comments-blocked",
+  "provider": "hubspot",
+  "title": "Posting COMMENT messages to Help Desk threads fails from 2026-09-23",
+  "summary": "HubSpot is replacing Help Desk thread comments with notes. Since 2026-09-23, POST .../threads/{threadId}/messages with \"type\": \"COMMENT\" on a thread whose inbox type is HELP_DESK returns a VALIDATION_ERROR (subCategory ConversationsApiError.HELPDESK_INBOX_CANNOT_PUBLISH). Comments on conversations-inbox threads still work.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/conversations/v3/conversations/threads/{threadId}/messages"
+  },
+  "changeClass": "status-code",
+  "trigger": {
+    "any": true
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-03-19",
+    "url": "https://developers.hubspot.com/changelog/upcoming-breaking-change-conversations-api-help-desk-and-comments"
+  },
+  "effectiveDate": "2026-09-23",
+  "severity": "high",
+  "migrationNote": "Before posting a COMMENT, check the thread's inbox (thread originalChannelAccountId -> channel account inboxId -> inbox type) or catch HELPDESK_INBOX_CANNOT_PUBLISH; for HELP_DESK inboxes create a note with the CRM Notes API and associate it with the thread's associatedTicketId, and read the ticket's notes instead of thread comments.",
+  "sources": [
+    "https://developers.hubspot.com/changelog/upcoming-breaking-change-conversations-api-help-desk-and-comments"
+  ],
+  "status": "verified"
+}

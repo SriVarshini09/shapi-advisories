@@ -12,22 +12,30 @@ const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 const validate = ajv.compile(schema);
 
-const dir = path.join(root, "advisories");
+// advisories/ is what SHAPI matches. advisories/pending/ holds researched advisories that wait for a
+// matcher feature (see its README); they follow the same rules, and ids are unique across both.
+const folders = ["advisories", "advisories/pending"];
 const errors = [];
 const ids = new Map();
-const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
-for (const file of files) {
-  const where = `advisories/${file}`;
+const counts = {};
+for (const folder of folders) {
+  const dir = path.join(root, folder);
+  const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+  counts[folder] = files.length;
+  for (const file of files) checkFile(dir, `${folder}/${file}`, file);
+}
+
+function checkFile(dir, where, file) {
   let advisory;
   try {
     advisory = JSON.parse(readFileSync(path.join(dir, file), "utf8"));
   } catch (err) {
     errors.push(`${where}: not valid JSON (${err.message})`);
-    continue;
+    return;
   }
   if (!validate(advisory)) {
     for (const e of validate.errors) errors.push(`${where}: ${e.instancePath || "/"} ${e.message}`);
-    continue;
+    return;
   }
   if (`${advisory.id}.json` !== file) errors.push(`${where}: file name must be "${advisory.id}.json"`);
   if (ids.has(advisory.id)) errors.push(`${where}: id "${advisory.id}" is also used by ${ids.get(advisory.id)}`);
@@ -43,4 +51,4 @@ if (errors.length) {
   console.error(`${errors.length} problem${errors.length === 1 ? "" : "s"}:\n${errors.map((e) => `  ${e}`).join("\n")}`);
   process.exit(1);
 }
-console.log(`${files.length} advisories valid`);
+console.log(`${counts.advisories} advisories valid, ${counts["advisories/pending"]} pending`);

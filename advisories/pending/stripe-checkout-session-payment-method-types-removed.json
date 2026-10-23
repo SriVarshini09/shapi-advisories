@@ -1,0 +1,27 @@
+{
+  "id": "stripe-checkout-session-payment-method-types-removed",
+  "provider": "stripe",
+  "title": "Stripe 2026-09-30.endive rejects payment_method_types on Checkout Session create",
+  "summary": "In API version 2026-09-30.endive the payment_method_types parameter is removed from POST /v1/checkout/sessions, and requests that still send it fail with HTTP 400. Integrations that upgrade their account or SDK to endive (or send Stripe-Version: 2026-09-30.endive) while hard-coding payment_method_types are hit; payment_method_types stays readable on the response.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v1/checkout/sessions"
+  },
+  "changeClass": "required-field",
+  "trigger": {
+    "headers": [{ "name": "Stripe-Version", "values": ["2026-09-30.endive"] }]
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-09-30",
+    "url": "https://docs.stripe.com/changelog/endive/2026-09-30/remove-payment-method-types-checkout-sessions"
+  },
+  "effectiveDate": "2026-09-30",
+  "severity": "high",
+  "migrationNote": "Before upgrading to 2026-09-30.endive, stop sending payment_method_types when creating Checkout Sessions: rely on dynamic payment methods configured in the Dashboard, use excluded_payment_method_types to drop specific types, or pass allowed_payment_method_types, which filters to compatible methods instead of erroring. Test in a sandbox; Workbench lets you roll the account version back for 72 hours.",
+  "sources": [
+    "https://docs.stripe.com/changelog/endive/2026-09-30/remove-payment-method-types-checkout-sessions",
+    "https://docs.stripe.com/api/checkout/sessions/create"
+  ],
+  "status": "verified"
+}

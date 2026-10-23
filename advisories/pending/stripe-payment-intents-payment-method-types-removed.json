@@ -1,0 +1,27 @@
+{
+  "id": "stripe-payment-intents-payment-method-types-removed",
+  "provider": "stripe",
+  "title": "Stripe 2026-09-30.endive rejects payment_method_types on PaymentIntents and SetupIntents",
+  "summary": "In API version 2026-09-30.endive payment_method_types is no longer writable on PaymentIntent create, update and confirm (POST /v1/payment_intents, /v1/payment_intents/{intent}, /v1/payment_intents/{intent}/confirm) or on SetupIntent create and update. Sending it returns HTTP 400 with code payment_method_types_no_longer_supported; it remains a read-only property on the objects.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v1/payment_intents/**"
+  },
+  "changeClass": "required-field",
+  "trigger": {
+    "headers": [{ "name": "Stripe-Version", "values": ["2026-09-30.endive"] }]
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-09-30",
+    "url": "https://docs.stripe.com/changelog/endive/2026-09-30/removes-the-payment-method-types-parameter-from-payment-intents-and-setup-intents"
+  },
+  "effectiveDate": "2026-09-30",
+  "severity": "high",
+  "migrationNote": "Before upgrading to 2026-09-30.endive, remove payment_method_types from PaymentIntent and SetupIntent create, update and confirm calls (check /v1/setup_intents too). Use dynamic payment methods, optionally with excluded_payment_method_types, or pass allowed_payment_method_types, which silently filters out incompatible types instead of erroring.",
+  "sources": [
+    "https://docs.stripe.com/changelog/endive/2026-09-30/removes-the-payment-method-types-parameter-from-payment-intents-and-setup-intents",
+    "https://docs.stripe.com/api/payment_intents/confirm"
+  ],
+  "status": "verified"
+}
