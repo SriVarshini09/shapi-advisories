@@ -4,8 +4,7 @@ These advisories are researched and follow the same rules as the ones in `adviso
 
 | Advisory | Needs |
 |---|---|
-| `openai-legacy-gpt-o-series-shutdown-2026-10-23`, `openai-gpt-4o-gpt-4-1-snapshots-shutdown-2027-01-14`, `anthropic-claude-sonnet-4-5-retirement` | The `model` value in the request body. Only calls to the retired models are hit, not every call to the endpoint. |
-| `stripe-checkout-session-payment-method-types-removed`, `stripe-payment-intents-payment-method-types-removed` | Request-body parameters. Only requests that send `payment_method_types` on the new API version are hit. |
+| `stripe-checkout-session-payment-method-types-removed`, `stripe-payment-intents-payment-method-types-removed` | Both conditions at once: a request that sends `payment_method_types` (SHAPI reads request bodies now) **and** pins the new API version. A trigger matches on any one of its conditions today, so it would flag requests on older versions too. |
 | `quickbooks-query-orderby-id-not-sortable` | The value of the `query` parameter: only `ORDERBY Id` statements are hit. |
 | `hubspot-helpdesk-thread-comments-blocked`, `hubspot-customer-agent-lead-status-read-only` | Request-body values: only comments on help-desk threads, and only writes to `hs_customer_agent_lead_status`, are hit. |
 | `salesforce-standard-volume-platform-events-retired` | Whether a platform event is standard-volume. The same path publishes high-volume events, which keep working. |

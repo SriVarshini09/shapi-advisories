@@ -9,7 +9,15 @@
   },
   "changeClass": "version-sunset",
   "trigger": {
-    "any": true
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          "claude-sonnet-4-5-20250929",
+          "claude-sonnet-4-5"
+        ]
+      }
+    ]
   },
   "firstObserved": null,
   "publishedNotice": {
