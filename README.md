@@ -8,7 +8,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | Effective | Provider | What changed | Severity | Status |
 |---|---|---|---|---|
 | 2025-08-01 | QuickBooks | [Minor versions below 75 are silently answered as minor version 75](advisories/quickbooks-minorversion-below-75-ignored.json) | high | verified |
-| 2025-11-01 | HubSpot | [Marketing Email API v1 sunset (reported as 2025-11-01)](advisories/hubspot-marketing-emails-v1-sunset.json) | critical | unverified |
+| 2025-11-01 | HubSpot | [Marketing Email API v1 sunset on 2025-11-01](advisories/hubspot-marketing-emails-v1-sunset.json) | critical | verified |
 | 2025-11-03 | Meta | [oEmbed responses no longer return author and thumbnail fields](advisories/meta-graph-instagram-oembed-fields-removed.json) | high | verified |
 | 2025-11-12 | Slack | [files.upload Web API method sunset on 2025-11-12](advisories/slack-files-upload-retired.json) | critical | verified |
 | 2025-11-15 | Meta | [Page Insights impressions and page fans metrics removed on 2025-11-15](advisories/meta-graph-page-insights-impressions-fans-removed.json) | critical | verified |
@@ -33,7 +33,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-09-24 | Meta | [Graph API v20.0 removed; calls fall forward to the next version](advisories/meta-graph-v20-sunset.json) | high | verified |
 | 2026-09-30 | Twilio | [Twilio Conference list returns only in-progress conferences by default from 2026-09-30](advisories/twilio-conference-list-default-in-progress.json) | critical | verified |
 | 2026-10-07 | Google | [Google Ads API v22 sunset on 2026-10-07](advisories/google-ads-api-v22-sunset.json) | critical | verified |
-| 2026-10-08 | Xero | [Allocations between documents of different contacts are rejected](advisories/xero-allocations-contact-mismatch-rejected.json) | medium | unverified |
+| 2026-10-08 | Xero | [Allocations between documents of different contacts are rejected](advisories/xero-allocations-contact-mismatch-rejected.json) | medium | verified |
 | 2026-10-21 | Anthropic | [anthropic-version 2026-10-21 rejects temperature, top_p and top_k with 400](advisories/anthropic-api-version-2026-10-21-sampling-params-400.json) | high | verified |
 | 2026-10-27 | Meta | [Commerce Order Management API removed on all versions on 2026-10-27](advisories/meta-graph-commerce-order-management-removed.json) | critical | verified |
 | 2026-10-27 | Meta | [date_format query parameter returns an error from 2026-10-27](advisories/meta-graph-date-format-param-removed.json) | critical | verified |
@@ -53,8 +53,8 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2027-01-14 | Xero | [Invoice email daily limit returns 429 instead of 500 from 2027-01-14](advisories/xero-invoices-email-daily-limit-429.json) | medium | verified |
 | 2027-01-16 | Shopify | [Shopify Admin API version 2026-01 becomes unsupported on 2027-01-16](advisories/shopify-admin-api-2026-01-unsupported.json) | critical | verified |
 | 2027-01-21 | Meta | [Graph API v21.0 removed on 2027-01-21](advisories/meta-graph-v21-sunset.json) | high | verified |
-| 2027-01-31 | Twilio | [Twilio Notify reaches end of life (reported for 2027-01-31)](advisories/twilio-notify-end-of-life.json) | critical | unverified |
-| 2027-02-01 | QuickBooks | [Refresh tokens hard-expire after five years, first ones in February 2027](advisories/quickbooks-refresh-token-five-year-hard-expiry.json) | high | unverified |
+| 2027-01-31 | Twilio | [Twilio Notify reaches end of life on 2027-01-31](advisories/twilio-notify-end-of-life.json) | critical | verified |
+| 2027-02-01 | QuickBooks | [Refresh tokens hard-expire after five years, first ones in February 2027](advisories/quickbooks-refresh-token-five-year-hard-expiry.json) | high | verified |
 | 2027-02-23 | Meta | [Marketing API v25.0 available until 2027-02-23](advisories/meta-graph-marketing-api-v25-sunset.json) | high | verified |
 | 2027-02-26 | OpenAI | [/v1/audio/translations shuts down on 2027-02-26](advisories/openai-audio-translations-endpoint-shutdown.json) | high | verified |
 | 2027-03-01 | Shopify | [Shopify script tags stop running on storefronts on 2027-03-01](advisories/shopify-script-tags-stop-running.json) | high | verified |
