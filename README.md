@@ -35,6 +35,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-10-07 | Google | [Google Ads API v22 sunset on 2026-10-07](advisories/google-ads-api-v22-sunset.json) | critical | verified |
 | 2026-10-08 | Xero | [Allocations between documents of different contacts are rejected](advisories/xero-allocations-contact-mismatch-rejected.json) | medium | unverified |
 | 2026-10-21 | Anthropic | [anthropic-version 2026-10-21 rejects temperature, top_p and top_k with 400](advisories/anthropic-api-version-2026-10-21-sampling-params-400.json) | high | verified |
+| 2026-10-23 | OpenAI | [gpt-3.5-turbo, gpt-4, gpt-4-turbo, o1, o3-mini and o4-mini shut down on 2026-10-23](advisories/openai-legacy-gpt-o-series-shutdown-2026-10-23.json) | medium | verified |
 | 2026-10-27 | Meta | [Commerce Order Management API removed on all versions on 2026-10-27](advisories/meta-graph-commerce-order-management-removed.json) | critical | verified |
 | 2026-10-27 | Meta | [date_format query parameter returns an error from 2026-10-27](advisories/meta-graph-date-format-param-removed.json) | critical | verified |
 | 2026-10-27 | Meta | [Delivery Estimate drops daily_outcomes_curve, budget_guardrail and estimate_dau](advisories/meta-graph-delivery-estimate-fields-removed.json) | critical | verified |
@@ -43,6 +44,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-11-05 | Xero | [NZ Payroll employee tax requests without KiwiSaverStatus return 400 from 2026-11-05](advisories/xero-nz-payroll-employee-tax-kiwisaverstatus-required.json) | critical | verified |
 | 2026-11-10 | Meta | [Marketing API v24.0 available until 2026-11-10](advisories/meta-graph-marketing-api-v24-sunset.json) | critical | verified |
 | 2026-11-17 | Gemini | [Gemini 2.5 preview TTS models shut down on 2026-11-17](advisories/google-gemini-2-5-preview-tts-shutdown.json) | critical | verified |
+| 2026-11-30 | Anthropic | [Claude Sonnet 4.5 retires on 2026-11-30](advisories/anthropic-claude-sonnet-4-5-retirement.json) | medium | verified |
 | 2026-11-30 | OpenAI | [Evals API shuts down on 2026-11-30](advisories/openai-evals-api-shutdown.json) | critical | verified |
 | 2026-12-01 | Salesforce | [SOAP login() requires the Use Any API Auth permission from 2026-12-01](advisories/salesforce-soap-login-use-any-api-auth-required.json) | critical | verified |
 | 2026-12-04 | HubSpot | [Pipelines API v1 retired on 2026-12-04](advisories/hubspot-pipelines-v1-sunset.json) | high | verified |
@@ -50,6 +52,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-12-15 | Salesforce | [SOAP login() turned off in orgs with no use in six months, from 2026-12-15](advisories/salesforce-soap-login-disabled-when-unused.json) | critical | verified |
 | 2027-01-01 | Google | [Custom Search JSON API discontinued on 2027-01-01](advisories/google-custom-search-json-api-shutdown.json) | critical | verified |
 | 2027-01-01 | Shopify | [Shopify rejects non-expiring offline access tokens from public apps on 2027-01-01](advisories/shopify-non-expiring-offline-tokens-rejected.json) | critical | verified |
+| 2027-01-14 | OpenAI | [gpt-4o, gpt-4o-mini, gpt-4.1 and gpt-4.1-mini snapshots shut down on 2027-01-14](advisories/openai-gpt-4o-gpt-4-1-snapshots-shutdown-2027-01-14.json) | medium | verified |
 | 2027-01-14 | Xero | [Invoice email daily limit returns 429 instead of 500 from 2027-01-14](advisories/xero-invoices-email-daily-limit-429.json) | medium | verified |
 | 2027-01-16 | Shopify | [Shopify Admin API version 2026-01 becomes unsupported on 2027-01-16](advisories/shopify-admin-api-2026-01-unsupported.json) | critical | verified |
 | 2027-01-21 | Meta | [Graph API v21.0 removed on 2027-01-21](advisories/meta-graph-v21-sunset.json) | high | verified |
@@ -63,7 +66,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2027-09-13 | Xero | [Broad accounting.transactions scope replaced by granular scopes](advisories/xero-accounting-transactions-scope-split.json) | medium | verified |
 <!-- advisories:end -->
 
-Researched advisories that SHAPI can't match precisely yet (they depend on request-body values, for example a retired model name) are kept in [`advisories/pending/`](advisories/pending), with what each one needs.
+Researched advisories that SHAPI can't match precisely yet (for example a request-body parameter that only breaks on a new API version) are kept in [`advisories/pending/`](advisories/pending), with what each one needs.
 
 ## Format
 
@@ -71,7 +74,7 @@ One JSON file per advisory in [`advisories/`](advisories), named `<id>.json` and
 
 - **`endpoint`**: provider, HTTP method and path pattern, for example `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`.
 - **`changeClass`**: `status-code`, `field-rename`, `enum-added`, `required-field`, `version-sunset`, `scope-change` or `auth`.
-- **`trigger`**: what a call site must do to be affected, for example "checks `status === 204`" or "sends `minorversion` below 75". A call site that only calls the endpoint is *exposed*; one that depends on what changed is *affected*.
+- **`trigger`**: what a call site must do to be affected, for example "checks `status === 204`", "sends `minorversion` below 75" or "sends `model: \"o1-mini\"` in the request body" (`body: [{ "field": "model", "values": [...] }]`; without `values`, sending the field at all is enough). A call site that only calls the endpoint is *exposed*; one that depends on what changed is *affected*.
 - **`firstObserved`**, **`publishedNotice`**, **`effectiveDate`**: when it was seen in the wild, whether and where the provider announced it, and when it takes effect.
 - **`migrationNote`**, **`recipeId`**: how to fix it, and the deterministic fix recipe SHAPI applies, if there is one.
 - **`fix`** (with `recipeId: "apply-fix"`): the exact change, as data. `path` (from and to, for example `/v21.0/` to `/v26.0/`), `query` and `header` change what the code sends; `fields` and `enums` list renamed response fields and enum values. SHAPI applies it and proves it with a generated contract test.
