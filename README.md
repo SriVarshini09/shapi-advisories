@@ -79,7 +79,7 @@ Researched advisories that SHAPI can't match precisely yet (for example a reques
 
 One JSON file per advisory in [`advisories/`](advisories), named `<id>.json` and valid against [`schema/advisory.schema.json`](schema/advisory.schema.json). The fields that matter most:
 
-- **`endpoint`**: provider, HTTP method and path pattern, for example `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`.
+- **`endpoint`**: provider, HTTP method and path pattern, for example `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`. In a path, `{param}` matches one segment, `*` matches within a segment, `**` matches any number of segments, and `{?}` matches only a value the code builds at runtime (such as a model an SDK passes as a parameter), never a literal.
 - **`changeClass`**: `status-code`, `field-rename`, `enum-added`, `required-field`, `version-sunset`, `scope-change` or `auth`.
 - **`trigger`**: what a call site must do to be affected, for example "checks `status === 204`", "sends `minorversion` below 75" or "sends `model: \"o1-mini\"` in the request body" (`body: [{ "field": "model", "values": [...] }]`; without `values`, sending the field at all is enough). An `enums` condition can list `values` too, to fire only when the code compares the field with one of them (numbers are written as strings, such as `"30046"`). A call site that only calls the endpoint is *exposed*; one that depends on what changed is *affected*.
 - **`firstObserved`**, **`publishedNotice`**, **`effectiveDate`**: when it was seen in the wild, whether and where the provider announced it, and when it takes effect.
