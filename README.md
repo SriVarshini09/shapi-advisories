@@ -24,18 +24,22 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-05-04 | Xero | [Finance API Accounting Activities endpoints decommissioned](advisories/xero-finance-accounting-activities-decommissioned.json) | critical | verified |
 | 2026-05-30 | Reddit | [Logged-out .json endpoints return 403](advisories/reddit-logged-out-json-403.json) | high | unverified |
 | 2026-06-01 | Gemini | [gemini-2.0-flash and gemini-2.0-flash-lite shut down on 2026-06-01](advisories/google-gemini-2-0-flash-shutdown.json) | critical | verified |
+| 2026-06-01 | Gemini | [gemini-2.0-flash and gemini-2.0-flash-lite shut down on 2026-06-01 (model in the request body)](advisories/google-gemini-2-0-flash-shutdown-sdk.json) | critical | verified |
 | 2026-06-15 | Meta | [Page Insights reach and 3-second video viewer metrics removed on 2026-06-15](advisories/meta-graph-page-insights-reach-video-views-removed.json) | critical | verified |
 | 2026-06-30 | Xero | [Organisation Class enum gains ULTRA](advisories/xero-organisation-class-ultra-enum.json) | medium | verified |
 | 2026-08-01 | Twilio | [Twilio Voice Insights Call Summary drops attributes.conference_participant on 2026-08-01](advisories/twilio-voice-insights-conference-participant-removed.json) | medium | verified |
 | 2026-08-10 | Twilio | [Twilio RCS unconfirmed-delivery error code changed from 30036 to 30046](advisories/twilio-rcs-undelivered-error-code-30046.json) | medium | verified |
 | 2026-08-26 | OpenAI | [Assistants API removed on 2026-08-26](advisories/openai-assistants-api-shutdown.json) | critical | verified |
+| 2026-08-26 | OpenAI | [Assistants API threads, messages and runs removed on 2026-08-26](advisories/openai-assistants-threads-api-shutdown.json) | critical | verified |
 | 2026-09-10 | Xero | [AU Payroll pay item and earnings rate writes require IsQualifyingEarnings](advisories/xero-au-payroll-isqualifyingearnings-required.json) | critical | verified |
+| 2026-09-10 | Xero | [AU Payroll pay item and earnings rate writes require IsQualifyingEarnings (v2 earningsRates)](advisories/xero-au-payroll-isqualifyingearnings-required-earningsrates.json) | critical | verified |
 | 2026-09-24 | Meta | [Graph API v20.0 removed; calls fall forward to the next version](advisories/meta-graph-v20-sunset.json) | high | verified |
 | 2026-09-30 | Twilio | [Twilio Conference list returns only in-progress conferences by default from 2026-09-30](advisories/twilio-conference-list-default-in-progress.json) | critical | verified |
 | 2026-10-07 | Google | [Google Ads API v22 sunset on 2026-10-07](advisories/google-ads-api-v22-sunset.json) | critical | verified |
 | 2026-10-08 | Xero | [Allocations between documents of different contacts are rejected](advisories/xero-allocations-contact-mismatch-rejected.json) | medium | verified |
 | 2026-10-21 | Anthropic | [anthropic-version 2026-10-21 rejects temperature, top_p and top_k with 400](advisories/anthropic-api-version-2026-10-21-sampling-params-400.json) | high | verified |
 | 2026-10-23 | OpenAI | [gpt-3.5-turbo, gpt-4, gpt-4-turbo, o1, o3-mini and o4-mini shut down on 2026-10-23](advisories/openai-legacy-gpt-o-series-shutdown-2026-10-23.json) | medium | verified |
+| 2026-10-23 | OpenAI | [gpt-3.5-turbo, gpt-4, gpt-4-turbo, o1, o3-mini and o4-mini shut down on 2026-10-23 (Responses API)](advisories/openai-legacy-gpt-o-series-shutdown-2026-10-23-responses.json) | medium | verified |
 | 2026-10-27 | Meta | [Commerce Order Management API removed on all versions on 2026-10-27](advisories/meta-graph-commerce-order-management-removed.json) | critical | verified |
 | 2026-10-27 | Meta | [date_format query parameter returns an error from 2026-10-27](advisories/meta-graph-date-format-param-removed.json) | critical | verified |
 | 2026-10-27 | Meta | [Delivery Estimate drops daily_outcomes_curve, budget_guardrail and estimate_dau](advisories/meta-graph-delivery-estimate-fields-removed.json) | critical | verified |
@@ -44,6 +48,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-11-05 | Xero | [NZ Payroll employee tax requests without KiwiSaverStatus return 400 from 2026-11-05](advisories/xero-nz-payroll-employee-tax-kiwisaverstatus-required.json) | critical | verified |
 | 2026-11-10 | Meta | [Marketing API v24.0 available until 2026-11-10](advisories/meta-graph-marketing-api-v24-sunset.json) | critical | verified |
 | 2026-11-17 | Gemini | [Gemini 2.5 preview TTS models shut down on 2026-11-17](advisories/google-gemini-2-5-preview-tts-shutdown.json) | critical | verified |
+| 2026-11-17 | Gemini | [Gemini 2.5 preview TTS models shut down on 2026-11-17 (model in the request body)](advisories/google-gemini-2-5-preview-tts-shutdown-sdk.json) | critical | verified |
 | 2026-11-30 | Anthropic | [Claude Sonnet 4.5 retires on 2026-11-30](advisories/anthropic-claude-sonnet-4-5-retirement.json) | medium | verified |
 | 2026-11-30 | OpenAI | [Evals API shuts down on 2026-11-30](advisories/openai-evals-api-shutdown.json) | critical | verified |
 | 2026-12-01 | Salesforce | [SOAP login() requires the Use Any API Auth permission from 2026-12-01](advisories/salesforce-soap-login-use-any-api-auth-required.json) | critical | verified |
@@ -53,6 +58,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2027-01-01 | Google | [Custom Search JSON API discontinued on 2027-01-01](advisories/google-custom-search-json-api-shutdown.json) | critical | verified |
 | 2027-01-01 | Shopify | [Shopify rejects non-expiring offline access tokens from public apps on 2027-01-01](advisories/shopify-non-expiring-offline-tokens-rejected.json) | critical | verified |
 | 2027-01-14 | OpenAI | [gpt-4o, gpt-4o-mini, gpt-4.1 and gpt-4.1-mini snapshots shut down on 2027-01-14](advisories/openai-gpt-4o-gpt-4-1-snapshots-shutdown-2027-01-14.json) | medium | verified |
+| 2027-01-14 | OpenAI | [gpt-4o, gpt-4o-mini, gpt-4.1 and gpt-4.1-mini snapshots shut down on 2027-01-14 (Responses API)](advisories/openai-gpt-4o-gpt-4-1-snapshots-shutdown-2027-01-14-responses.json) | medium | verified |
 | 2027-01-14 | Xero | [Invoice email daily limit returns 429 instead of 500 from 2027-01-14](advisories/xero-invoices-email-daily-limit-429.json) | medium | verified |
 | 2027-01-16 | Shopify | [Shopify Admin API version 2026-01 becomes unsupported on 2027-01-16](advisories/shopify-admin-api-2026-01-unsupported.json) | critical | verified |
 | 2027-01-21 | Meta | [Graph API v21.0 removed on 2027-01-21](advisories/meta-graph-v21-sunset.json) | high | verified |
@@ -62,6 +68,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2027-02-26 | OpenAI | [/v1/audio/translations shuts down on 2027-02-26](advisories/openai-audio-translations-endpoint-shutdown.json) | high | verified |
 | 2027-03-01 | Shopify | [Shopify script tags stop running on storefronts on 2027-03-01](advisories/shopify-script-tags-stop-running.json) | high | verified |
 | 2027-03-15 | Gemini | [gemini-2.5-flash-image shuts down on 2027-03-15](advisories/google-gemini-2-5-flash-image-shutdown.json) | high | verified |
+| 2027-03-15 | Gemini | [gemini-2.5-flash-image shuts down on 2027-03-15 (model in the request body)](advisories/google-gemini-2-5-flash-image-shutdown-sdk.json) | high | verified |
 | 2027-04-16 | Shopify | [Shopify Admin API version 2026-04 becomes unsupported on 2027-04-16](advisories/shopify-admin-api-2026-04-unsupported.json) | high | verified |
 | 2027-09-13 | Xero | [Broad accounting.transactions scope replaced by granular scopes](advisories/xero-accounting-transactions-scope-split.json) | medium | verified |
 <!-- advisories:end -->
@@ -72,9 +79,9 @@ Researched advisories that SHAPI can't match precisely yet (for example a reques
 
 One JSON file per advisory in [`advisories/`](advisories), named `<id>.json` and valid against [`schema/advisory.schema.json`](schema/advisory.schema.json). The fields that matter most:
 
-- **`endpoint`**: provider, HTTP method and path pattern, for example `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`.
+- **`endpoint`**: provider, HTTP method and path pattern, for example `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`. In a path, `{param}` matches one segment, `*` matches within a segment, `**` matches any number of segments, and `{?}` matches only a value the code builds at runtime (such as a model an SDK passes as a parameter), never a literal.
 - **`changeClass`**: `status-code`, `field-rename`, `enum-added`, `required-field`, `version-sunset`, `scope-change` or `auth`.
-- **`trigger`**: what a call site must do to be affected, for example "checks `status === 204`", "sends `minorversion` below 75" or "sends `model: \"o1-mini\"` in the request body" (`body: [{ "field": "model", "values": [...] }]`; without `values`, sending the field at all is enough). A call site that only calls the endpoint is *exposed*; one that depends on what changed is *affected*.
+- **`trigger`**: what a call site must do to be affected, for example "checks `status === 204`", "sends `minorversion` below 75" or "sends `model: \"o1-mini\"` in the request body" (`body: [{ "field": "model", "values": [...] }]`; without `values`, sending the field at all is enough). An `enums` condition can list `values` too, to fire only when the code compares the field with one of them (numbers are written as strings, such as `"30046"`). A call site that only calls the endpoint is *exposed*; one that depends on what changed is *affected*.
 - **`firstObserved`**, **`publishedNotice`**, **`effectiveDate`**: when it was seen in the wild, whether and where the provider announced it, and when it takes effect.
 - **`migrationNote`**, **`recipeId`**: how to fix it, and the deterministic fix recipe SHAPI applies, if there is one.
 - **`fix`** (with `recipeId: "apply-fix"`): the exact change, as data. `path` (from and to, for example `/v21.0/` to `/v26.0/`), `query` and `header` change what the code sends; `fields` and `enums` list renamed response fields and enum values. SHAPI applies it and proves it with a generated contract test.
