@@ -32,6 +32,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-08-26 | OpenAI | [Assistants API removed on 2026-08-26](advisories/openai-assistants-api-shutdown.json) | critical | verified |
 | 2026-08-26 | OpenAI | [Assistants API threads, messages and runs removed on 2026-08-26](advisories/openai-assistants-threads-api-shutdown.json) | critical | verified |
 | 2026-09-10 | Xero | [AU Payroll pay item and earnings rate writes require IsQualifyingEarnings](advisories/xero-au-payroll-isqualifyingearnings-required.json) | critical | verified |
+| 2026-09-10 | Xero | [AU Payroll pay item and earnings rate writes require IsQualifyingEarnings (v2 earningsRates)](advisories/xero-au-payroll-isqualifyingearnings-required-earningsrates.json) | critical | verified |
 | 2026-09-24 | Meta | [Graph API v20.0 removed; calls fall forward to the next version](advisories/meta-graph-v20-sunset.json) | high | verified |
 | 2026-09-30 | Twilio | [Twilio Conference list returns only in-progress conferences by default from 2026-09-30](advisories/twilio-conference-list-default-in-progress.json) | critical | verified |
 | 2026-10-07 | Google | [Google Ads API v22 sunset on 2026-10-07](advisories/google-ads-api-v22-sunset.json) | critical | verified |
