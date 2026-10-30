@@ -34,6 +34,10 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-09-10 | Xero | [AU Payroll pay item and earnings rate writes require IsQualifyingEarnings](advisories/xero-au-payroll-isqualifyingearnings-required.json) | critical | verified |
 | 2026-09-10 | Xero | [AU Payroll pay item and earnings rate writes require IsQualifyingEarnings (v2 earningsRates)](advisories/xero-au-payroll-isqualifyingearnings-required-earningsrates.json) | critical | verified |
 | 2026-09-24 | Meta | [Graph API v20.0 removed; calls fall forward to the next version](advisories/meta-graph-v20-sunset.json) | high | verified |
+| 2026-09-30 | Stripe | [Stripe 2026-09-30.endive requires an object for billing_cycle_anchor on subscription updates](advisories/stripe-endive-billing-cycle-anchor-object.json) | medium | unverified |
+| 2026-09-30 | Stripe | [Stripe 2026-09-30.endive removes payment_method_types from Checkout Session creation](advisories/stripe-endive-checkout-session-payment-method-types-removed.json) | high | unverified |
+| 2026-09-30 | Stripe | [Stripe 2026-09-30.endive removes payment_method_types from Payment Intent create, update and confirm](advisories/stripe-endive-payment-intent-payment-method-types-removed.json) | high | unverified |
+| 2026-09-30 | Stripe | [Stripe 2026-09-30.endive removes payment_method_types from Setup Intent create and update](advisories/stripe-endive-setup-intent-payment-method-types-removed.json) | high | unverified |
 | 2026-09-30 | Twilio | [Twilio Conference list returns only in-progress conferences by default from 2026-09-30](advisories/twilio-conference-list-default-in-progress.json) | critical | verified |
 | 2026-10-07 | Google | [Google Ads API v22 sunset on 2026-10-07](advisories/google-ads-api-v22-sunset.json) | critical | verified |
 | 2026-10-08 | Xero | [Allocations between documents of different contacts are rejected](advisories/xero-allocations-contact-mismatch-rejected.json) | medium | verified |
