@@ -15,10 +15,15 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2025-12-19 | GitHub | [workflow_dispatch returns 200 with a body instead of 204](advisories/github-workflow-dispatch-204-to-200.json) | critical | verified |
 | 2026-01-27 | QuickBooks | [CompanyInfo no longer returns the NeoEnabled NameValue](advisories/quickbooks-companyinfo-neoenabled-removed.json) | low | verified |
 | 2026-01-28 | HubSpot | [Marketing Email v3 stopped returning folderId on 2026-01-28](advisories/hubspot-marketing-emails-folderid-removed.json) | high | verified |
+| 2026-02-24 | Shopify | [Shopify shipping options move to rateGroups; rateProvider and methodConditions are legacy](advisories/shopify-delivery-method-definition-rate-groups.json) | medium | unverified |
 | 2026-03-18 | X | [X Activity API event types renamed from PascalCase to dot-separated lowercase](advisories/x-activity-api-pascalcase-event-types-removed.json) | high | verified |
+| 2026-03-23 | Shopify | [Shopify removes pre_tax_price from REST order line items](advisories/shopify-rest-order-line-item-pre-tax-price-removed.json) | medium | unverified |
 | 2026-03-25 | Stripe | [Stripe 2026-03-25.dahlia renames Checkout Session ui_mode values](advisories/stripe-checkout-session-ui-mode-values-renamed.json) | high | verified |
+| 2026-04-01 | Shopify | [Shopify inventoryActivate keeps existing quantities instead of resetting them to zero, as of 2026-04](advisories/shopify-inventory-activate-preserves-quantities.json) | medium | unverified |
+| 2026-04-01 | Shopify | [Shopify's REST inventory_levels/connect keeps existing quantities instead of resetting them, as of 2026-04](advisories/shopify-rest-inventory-connect-preserves-quantities.json) | medium | unverified |
 | 2026-04-16 | X | [Following users removed from X API self-serve tiers](advisories/x-self-serve-follow-writes-removed.json) | critical | verified |
 | 2026-04-16 | X | [Liking Posts removed from X API self-serve tiers](advisories/x-self-serve-like-writes-removed.json) | critical | verified |
+| 2026-04-24 | Shopify | [Shopify fixes OrderTransaction.totalUnsettledSet for pending captures](advisories/shopify-order-transaction-total-unsettled-fixed.json) | low | unverified |
 | 2026-04-30 | HubSpot | [Contact Lists API v1 retired on 2026-04-30; endpoints return 404](advisories/hubspot-contact-lists-v1-sunset.json) | critical | verified |
 | 2026-04-30 | HubSpot | [v1 contact read endpoints stopped returning list memberships on 2026-04-30](advisories/hubspot-contacts-v1-list-memberships-removed.json) | high | verified |
 | 2026-05-04 | Xero | [Finance API Accounting Activities endpoints decommissioned](advisories/xero-finance-accounting-activities-decommissioned.json) | critical | verified |
@@ -27,6 +32,8 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-06-01 | Gemini | [gemini-2.0-flash and gemini-2.0-flash-lite shut down on 2026-06-01 (model in the request body)](advisories/google-gemini-2-0-flash-shutdown-sdk.json) | critical | verified |
 | 2026-06-15 | Meta | [Page Insights reach and 3-second video viewer metrics removed on 2026-06-15](advisories/meta-graph-page-insights-reach-video-views-removed.json) | critical | verified |
 | 2026-06-30 | Xero | [Organisation Class enum gains ULTRA](advisories/xero-organisation-class-ultra-enum.json) | medium | verified |
+| 2026-07-01 | Shopify | [Shopify customerPaymentMethodRemoteCreate requires a payment method identifier as of 2026-07](advisories/shopify-customer-payment-method-remote-create-identifier-required.json) | medium | unverified |
+| 2026-07-01 | Shopify | [Shopify removes the inventorySetScheduledChanges mutation in API version 2026-07](advisories/shopify-inventory-set-scheduled-changes-removed.json) | high | unverified |
 | 2026-08-01 | Twilio | [Twilio Voice Insights Call Summary drops attributes.conference_participant on 2026-08-01](advisories/twilio-voice-insights-conference-participant-removed.json) | medium | verified |
 | 2026-08-10 | Twilio | [Twilio RCS unconfirmed-delivery error code changed from 30036 to 30046](advisories/twilio-rcs-undelivered-error-code-30046.json) | medium | verified |
 | 2026-08-26 | OpenAI | [Assistants API removed on 2026-08-26](advisories/openai-assistants-api-shutdown.json) | critical | verified |
@@ -39,6 +46,13 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-09-30 | Stripe | [Stripe 2026-09-30.endive removes payment_method_types from Payment Intent create, update and confirm](advisories/stripe-endive-payment-intent-payment-method-types-removed.json) | high | unverified |
 | 2026-09-30 | Stripe | [Stripe 2026-09-30.endive removes payment_method_types from Setup Intent create and update](advisories/stripe-endive-setup-intent-payment-method-types-removed.json) | high | unverified |
 | 2026-09-30 | Twilio | [Twilio Conference list returns only in-progress conferences by default from 2026-09-30](advisories/twilio-conference-list-default-in-progress.json) | critical | verified |
+| 2026-10-01 | Shopify | [Shopify carrierServiceCreate no longer adds the carrier service to the General shipping profile, as of 2026-10](advisories/shopify-carrier-service-not-added-to-default-profile.json) | medium | unverified |
+| 2026-10-01 | Shopify | [Shopify removes priceRule from DraftOrderDiscountNotAppliedWarning in API version 2026-10](advisories/shopify-draft-order-warning-price-rule-removed.json) | high | unverified |
+| 2026-10-01 | Shopify | [Shopify OrderDisplayFulfillmentStatus can return FULFILLMENT_NOT_REQUIRED as of 2026-10](advisories/shopify-order-display-fulfillment-status-not-required.json) | medium | unverified |
+| 2026-10-01 | Shopify | [Shopify orderUpdate recalculates taxes when an unfulfilled order's shipping address changes, as of 2026-10](advisories/shopify-order-update-shipping-address-recalculates-taxes.json) | medium | unverified |
+| 2026-10-01 | Shopify | [Shopify's REST carrier service creation no longer adds it to the General shipping profile, as of 2026-10](advisories/shopify-rest-carrier-service-not-added-to-default-profile.json) | medium | unverified |
+| 2026-10-01 | Shopify | [Shopify's REST order update recalculates taxes when an unfulfilled order's shipping address changes, as of 2026-10](advisories/shopify-rest-order-update-shipping-address-recalculates-taxes.json) | medium | unverified |
+| 2026-10-01 | Shopify | [Shopify segment query functions use MATCHES instead of = true as of API version 2026-10](advisories/shopify-segment-query-function-syntax.json) | medium | unverified |
 | 2026-10-07 | Google | [Google Ads API v22 sunset on 2026-10-07](advisories/google-ads-api-v22-sunset.json) | critical | verified |
 | 2026-10-08 | Xero | [Allocations between documents of different contacts are rejected](advisories/xero-allocations-contact-mismatch-rejected.json) | medium | verified |
 | 2026-10-21 | Anthropic | [anthropic-version 2026-10-21 rejects temperature, top_p and top_k with 400](advisories/anthropic-api-version-2026-10-21-sampling-params-400.json) | high | verified |
@@ -60,7 +74,12 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-12-15 | Salesforce | [SOAP login() from a broad IP range needs a security token from 2026-12-15](advisories/salesforce-soap-login-broad-ip-range-token-required.json) | critical | verified |
 | 2026-12-15 | Salesforce | [SOAP login() turned off in orgs with no use in six months, from 2026-12-15](advisories/salesforce-soap-login-disabled-when-unused.json) | critical | verified |
 | 2027-01-01 | Google | [Custom Search JSON API discontinued on 2027-01-01](advisories/google-custom-search-json-api-shutdown.json) | critical | verified |
+| 2027-01-01 | Shopify | [Shopify removes the automaticDiscounts query in API version 2027-01](advisories/shopify-automatic-discounts-query-removed.json) | high | unverified |
+| 2027-01-01 | Shopify | [Shopify removes the metafieldInteger collection condition in API version 2027-01](advisories/shopify-collection-metafield-integer-condition-removed.json) | high | unverified |
+| 2027-01-01 | Shopify | [Shopify removes the marketCurrencySettingsUpdate mutation in API version 2027-01](advisories/shopify-market-currency-settings-update-removed.json) | high | unverified |
+| 2027-01-01 | Shopify | [Shopify deprecates the PRIVATE and PUBLIC_READ metaobject admin access values](advisories/shopify-metaobject-admin-access-private-public-read-removed.json) | low | unverified |
 | 2027-01-01 | Shopify | [Shopify rejects non-expiring offline access tokens from public apps on 2027-01-01](advisories/shopify-non-expiring-offline-tokens-rejected.json) | critical | verified |
+| 2027-01-01 | Shopify | [Shopify Tax managed mode rejects market and publishing writes that conflict with it](advisories/shopify-tax-managed-mode-write-validation.json) | medium | unverified |
 | 2027-01-14 | OpenAI | [gpt-4o, gpt-4o-mini, gpt-4.1 and gpt-4.1-mini snapshots shut down on 2027-01-14](advisories/openai-gpt-4o-gpt-4-1-snapshots-shutdown-2027-01-14.json) | medium | verified |
 | 2027-01-14 | OpenAI | [gpt-4o, gpt-4o-mini, gpt-4.1 and gpt-4.1-mini snapshots shut down on 2027-01-14 (Responses API)](advisories/openai-gpt-4o-gpt-4-1-snapshots-shutdown-2027-01-14-responses.json) | medium | verified |
 | 2027-01-14 | Xero | [Invoice email daily limit returns 429 instead of 500 from 2027-01-14](advisories/xero-invoices-email-daily-limit-429.json) | medium | verified |
