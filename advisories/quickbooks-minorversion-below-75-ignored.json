@@ -19,7 +19,7 @@
   "firstObserved": "2025-08-01",
   "publishedNotice": {
     "date": null,
-    "url": "https://blogs.intuit.com/?p=34635"
+    "url": "https://medium.com/intuitdev/changes-to-our-accounting-api-that-may-impact-your-application-c330bd1a06f5"
   },
   "effectiveDate": "2025-08-01",
   "severity": "high",
@@ -32,7 +32,7 @@
     }
   },
   "sources": [
-    "https://blogs.intuit.com/?p=34635",
+    "https://medium.com/intuitdev/changes-to-our-accounting-api-that-may-impact-your-application-c330bd1a06f5",
     "https://www.apideck.com/blog/ai-built-accounting-integrations-maintenance",
     "https://docs.codat.io/updates/250401-qbo-minor-versions-update"
   ],

@@ -37,6 +37,64 @@
   "effectiveDate": "2026-10-23",
   "severity": "medium",
   "migrationNote": "Search request bodies and config for these model names and switch them: gpt-3.5-turbo and o4-mini to gpt-5.6-terra; gpt-4, gpt-4-1106-preview, gpt-4-turbo, gpt-4o-2024-05-13, o1 and o3-mini to gpt-5.6-sol; o1-pro to gpt-5.6-sol with reasoning.mode: pro; gpt-4.1-nano to gpt-5.6-luna. Re-run fine-tunes on the new base models. The same model names also stop working on the Responses and legacy Completions endpoints.",
+  "recipeId": "apply-fix",
+  "fix": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          {
+            "from": "gpt-3.5-turbo",
+            "to": "gpt-5.6-terra"
+          },
+          {
+            "from": "gpt-3.5-turbo-0125",
+            "to": "gpt-5.6-terra"
+          },
+          {
+            "from": "gpt-4",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "gpt-4-0613",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "gpt-4-1106-preview",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "gpt-4-turbo",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "gpt-4.1-nano",
+            "to": "gpt-5.6-luna"
+          },
+          {
+            "from": "gpt-4o-2024-05-13",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "o1",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "o1-pro",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "o3-mini",
+            "to": "gpt-5.6-sol"
+          },
+          {
+            "from": "o4-mini",
+            "to": "gpt-5.6-terra"
+          }
+        ]
+      }
+    ]
+  },
   "sources": [
     "https://developers.openai.com/api/docs/deprecations"
   ],

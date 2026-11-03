@@ -30,6 +30,36 @@
   "effectiveDate": "2027-01-14",
   "severity": "medium",
   "migrationNote": "Replace these model names with gpt-6-luna (OpenAI's recommended replacement) in request bodies and config, re-run fine-tunes on a supported base model, and compare output quality before 2027-01-14. The same model names are also used on the Responses API.",
+  "recipeId": "apply-fix",
+  "fix": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          {
+            "from": "gpt-4o-2024-08-06",
+            "to": "gpt-6-luna"
+          },
+          {
+            "from": "gpt-4o-2024-11-20",
+            "to": "gpt-6-luna"
+          },
+          {
+            "from": "gpt-4o-mini-2024-07-18",
+            "to": "gpt-6-luna"
+          },
+          {
+            "from": "gpt-4.1-2025-04-14",
+            "to": "gpt-6-luna"
+          },
+          {
+            "from": "gpt-4.1-mini-2025-04-14",
+            "to": "gpt-6-luna"
+          }
+        ]
+      }
+    ]
+  },
   "sources": [
     "https://developers.openai.com/api/docs/deprecations"
   ],
