@@ -27,6 +27,24 @@
   "effectiveDate": "2027-03-15",
   "severity": "high",
   "migrationNote": "Move image generation to gemini-3.1-flash-lite-image, the replacement on the deprecations page, before 2027-03-15, and re-test how you read the returned image parts.",
+  "recipeId": "apply-fix",
+  "fix": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          {
+            "from": "gemini-2.5-flash-image",
+            "to": "gemini-3.1-flash-lite-image"
+          },
+          {
+            "from": "models/gemini-2.5-flash-image",
+            "to": "models/gemini-3.1-flash-lite-image"
+          }
+        ]
+      }
+    ]
+  },
   "sources": [
     "https://ai.google.dev/gemini-api/docs/deprecations",
     "https://ai.google.dev/gemini-api/docs/image-generation"

@@ -27,6 +27,24 @@
   "effectiveDate": "2026-11-30",
   "severity": "medium",
   "migrationNote": "Change the model to claude-sonnet-5-5 (Anthropic's recommended replacement) and follow the Sonnet 4.5 to 5.5 migration guide, because some request shapes Sonnet 4.5 accepts (for example sampling parameters or forced tool use) can return 400 on newer models. Amazon Bedrock and Google-managed Google Cloud set their own retirement dates.",
+  "recipeId": "apply-fix",
+  "fix": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          {
+            "from": "claude-sonnet-4-5-20250929",
+            "to": "claude-sonnet-5-5"
+          },
+          {
+            "from": "claude-sonnet-4-5",
+            "to": "claude-sonnet-5-5"
+          }
+        ]
+      }
+    ]
+  },
   "sources": [
     "https://platform.claude.com/docs/en/about-claude/model-deprecations",
     "https://platform.claude.com/docs/en/release-notes/overview"
