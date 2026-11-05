@@ -9,7 +9,10 @@
   },
   "changeClass": "required-field",
   "trigger": {
-    "any": true
+    "any": true,
+    "unlessSent": [
+      "Status"
+    ]
   },
   "firstObserved": null,
   "publishedNotice": {
