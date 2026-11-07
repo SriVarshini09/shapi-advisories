@@ -53,6 +53,25 @@
           }
         ]
       }
+    ],
+    "body": [
+      {
+        "field": "ui_mode",
+        "values": [
+          {
+            "from": "hosted",
+            "to": "hosted_page"
+          },
+          {
+            "from": "embedded",
+            "to": "embedded_page"
+          },
+          {
+            "from": "custom",
+            "to": "elements"
+          }
+        ]
+      }
     ]
   },
   "sources": [
