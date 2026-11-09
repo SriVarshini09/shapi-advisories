@@ -1,0 +1,48 @@
+{
+  "id": "openai-gpt-5-5-cyber-preview-shutdown-2027-02-01",
+  "provider": "openai",
+  "title": "gpt-5.5-cyber-preview is removed on 2027-02-01",
+  "summary": "OpenAI deprecated gpt-5.5-cyber-preview on 2026-11-05 and removes it from the API on 2027-02-01. Only organizations with existing access can use it. This advisory covers Responses API calls (POST /v1/responses), the API OpenAI's Daybreak guide documents for this model, that send it; OpenAI says requests that use it will fail after retirement.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v1/responses"
+  },
+  "changeClass": "version-sunset",
+  "trigger": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          "gpt-5.5-cyber-preview"
+        ]
+      }
+    ]
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-11-05",
+    "url": "https://developers.openai.com/api/docs/deprecations"
+  },
+  "effectiveDate": "2027-02-01",
+  "severity": "medium",
+  "migrationNote": "Before 2027-02-01, change the model to gpt-5.6-cyber, or to gpt-6-cyber if your organization has approval for it (OpenAI's Daybreak guide names both; the deprecations page says the most capable cyber model available to you). Which one depends on your access, so SHAPI offers no automatic swap. Confirm the project that sends the request has access to the replacement, and keep sending the access_programs.cyber value the guide lists for it.",
+  "sources": [
+    "https://developers.openai.com/api/docs/deprecations",
+    "https://developers.openai.com/api/docs/guides/daybreak"
+  ],
+  "status": "verified",
+  "provenance": [
+    {
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "quote": "The gpt-5.5-cyber-preview model is deprecated and will be removed from the API on February 1, 2027. Migrate to the most capable cyber model available to you before the shutdown date.",
+      "sourceSha256": "5bfbf5e1dd16880d35024e4860722aa103bcb1f874dfe17e2a4660d8c6c043f4",
+      "fetchedAt": "2026-11-08T23:52:55.477Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/daybreak",
+      "quote": "Only organizations with existing access can use gpt-5.5-cyber-preview. It retires on February 1, 2027. Requests that use this model will fail after retirement. If you use it, change the model field to gpt-5.6-cyber before that date.",
+      "sourceSha256": "795bd1db7f8ef486c24ef565cb5700ed8e9017b1080342a781b9419f5fca5812",
+      "fetchedAt": "2026-11-08T23:52:56.541Z"
+    }
+  ]
+}

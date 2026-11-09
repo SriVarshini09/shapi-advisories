@@ -1,0 +1,15 @@
+2026-06-11: GPT-5 and o3 model deprecations
+On June 11, 2026, we notified developers using older GPT-5 and o3 model snapshots of their deprecation and removal from the API on December 11, 2026.
+Shutdown date
+...
+gpt-5.6-luna
+Dec 11, 2026
+gpt-5-pro | gpt-5-pro-2025-10-06
+gpt-5.6-sol (reasoning.mode: pro)
+Dec 11, 2026
+o3 | o3-2025-04-16
+gpt-5.6-sol
+Dec 11, 2026
+o3-pro | o3-pro-2025-06-10
+gpt-5.6-sol (reasoning.mode: pro)
+Fine-tuned versions of these models follow the same shutdown schedule as their underlying base models.

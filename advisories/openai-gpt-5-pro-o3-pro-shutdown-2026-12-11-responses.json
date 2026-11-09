@@ -1,0 +1,58 @@
+{
+  "id": "openai-gpt-5-pro-o3-pro-shutdown-2026-12-11-responses",
+  "provider": "openai",
+  "title": "gpt-5-pro and o3-pro shut down on 2026-12-11 (Responses API)",
+  "summary": "On 2026-12-11 OpenAI shuts down gpt-5-pro (2025-10-06) and o3-pro (2025-06-10), plus fine-tunes of these models. Both run only on the Responses API, so this advisory covers calls to POST /v1/responses that send one of these exact model names (or their dated snapshots); they fail from then on. openai-gpt-5-o3-shutdown-2026-12-11-responses covers gpt-5, gpt-5-mini, gpt-5-nano and o3.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v1/responses"
+  },
+  "changeClass": "version-sunset",
+  "trigger": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          "gpt-5-pro",
+          "gpt-5-pro-2025-10-06",
+          "o3-pro",
+          "o3-pro-2025-06-10"
+        ]
+      }
+    ]
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-06-11",
+    "url": "https://developers.openai.com/api/docs/deprecations"
+  },
+  "effectiveDate": "2026-12-11",
+  "severity": "medium",
+  "migrationNote": "Switch both to gpt-5.6-sol with reasoning.mode: pro, the replacement OpenAI's deprecations page names. That adds a request setting as well as changing the model name, so SHAPI offers no automatic swap. Re-run fine-tunes on a supported base model.",
+  "sources": [
+    "https://developers.openai.com/api/docs/deprecations",
+    "https://developers.openai.com/api/docs/models/gpt-5-pro.md",
+    "https://developers.openai.com/api/docs/models/o3-pro.md"
+  ],
+  "status": "verified",
+  "provenance": [
+    {
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "quote": "Dec 11, 2026 gpt-5-pro | gpt-5-pro-2025-10-06 gpt-5.6-sol (reasoning.mode: pro) Dec 11, 2026 o3 | o3-2025-04-16 gpt-5.6-sol Dec 11, 2026 o3-pro | o3-pro-2025-06-10 gpt-5.6-sol (reasoning.mode: pro)",
+      "sourceSha256": "bf03188801ec0f9e8ec48061388f093e49b85890a684562a4a0702df2174493f",
+      "fetchedAt": "2026-11-09T03:12:00.261Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-pro.md",
+      "quote": "| Chat Completions | `v1/chat/completions` | Not supported |",
+      "sourceSha256": "ed0e0caec9df665bfe5800baeefcfea8a067597aa8c2d23702f920976d9155ac",
+      "fetchedAt": "2026-11-09T03:12:01.389Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/o3-pro.md",
+      "quote": "| Chat Completions | `v1/chat/completions` | Not supported |",
+      "sourceSha256": "3b41ae9e053c803346698ebdaf1a3cb5a02067d5f149a94681a462f361d07fed",
+      "fetchedAt": "2026-11-09T03:12:02.510Z"
+    }
+  ]
+}

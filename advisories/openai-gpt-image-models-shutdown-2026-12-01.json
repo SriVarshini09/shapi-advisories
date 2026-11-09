@@ -1,0 +1,65 @@
+{
+  "id": "openai-gpt-image-models-shutdown-2026-12-01",
+  "provider": "openai",
+  "title": "gpt-image-1-mini, gpt-image-1.5 and chatgpt-image-latest shut down on 2026-12-01",
+  "summary": "On 2026-12-01 OpenAI removes gpt-image-1-mini, gpt-image-1.5 (and its snapshot gpt-image-1.5-2025-12-16) and chatgpt-image-latest from the API (announced 2026-06-02). This advisory covers image generation calls (POST /v1/images/generations, images.generate in the SDKs) that send one of these models; they fail from then on. openai-gpt-image-models-shutdown-2026-12-01-edits covers image edits. Calls that name these models inside the Responses API image_generation tool, or in Batch input files, are not matched.",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v1/images/generations"
+  },
+  "changeClass": "version-sunset",
+  "trigger": {
+    "body": [
+      {
+        "field": "model",
+        "values": [
+          "gpt-image-1-mini",
+          "gpt-image-1.5",
+          "gpt-image-1.5-2025-12-16",
+          "chatgpt-image-latest"
+        ]
+      }
+    ]
+  },
+  "firstObserved": null,
+  "publishedNotice": {
+    "date": "2026-06-02",
+    "url": "https://developers.openai.com/api/docs/deprecations"
+  },
+  "effectiveDate": "2026-12-01",
+  "severity": "high",
+  "migrationNote": "Before 2026-12-01, change the model to gpt-image-2.6-sunburst or gpt-image-2.6-flare, the two replacements OpenAI's deprecations page names; it does not say which fits which old model, so SHAPI offers no automatic swap. Re-test the size, quality and output options you send, and switch any image_generation tool in the Responses API that names these models too.",
+  "sources": [
+    "https://developers.openai.com/api/docs/deprecations",
+    "https://developers.openai.com/api/docs/models/gpt-image-1.5.md",
+    "https://developers.openai.com/api/docs/models/gpt-image-1-mini.md",
+    "https://developers.openai.com/api/docs/models/chatgpt-image-latest.md"
+  ],
+  "status": "verified",
+  "provenance": [
+    {
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "quote": "Shutdown date Model / system Recommended replacement Dec 1, 2026 gpt-image-1-mini gpt-image-2.6-sunburst or gpt-image-2.6-flare Dec 1, 2026 gpt-image-1.5 | gpt-image-1.5-2025-12-16 gpt-image-2.6-sunburst or gpt-image-2.6-flare Dec 1, 2026 chatgpt-image-latest gpt-image-2.6-sunburst or gpt-image-2.6-flare",
+      "sourceSha256": "5bfbf5e1dd16880d35024e4860722aa103bcb1f874dfe17e2a4660d8c6c043f4",
+      "fetchedAt": "2026-11-08T23:53:02.108Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-image-1.5.md",
+      "quote": "| Image generation | `v1/images/generations` | Supported |",
+      "sourceSha256": "c35af5a4269fed81809d8394ec65fcf123fe9730bf51f7d13e0783ad885b1d2f",
+      "fetchedAt": "2026-11-08T23:53:03.226Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-image-1-mini.md",
+      "quote": "| Image generation | `v1/images/generations` | Supported |",
+      "sourceSha256": "4d9ea36557d4b9800c46b5ff30f4e137f61a028a624d3910c2e1ca3949384495",
+      "fetchedAt": "2026-11-08T23:53:04.362Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/chatgpt-image-latest.md",
+      "quote": "| Image generation | `v1/images/generations` | Supported |",
+      "sourceSha256": "6d50945ddd1515709ea037d61a3c70c2ed00ca3025546c5099722a871afd88e4",
+      "fetchedAt": "2026-11-08T23:53:05.480Z"
+    }
+  ]
+}
