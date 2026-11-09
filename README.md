@@ -69,8 +69,13 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2026-11-17 | Gemini | [Gemini 2.5 preview TTS models shut down on 2026-11-17 (model in the request body)](advisories/google-gemini-2-5-preview-tts-shutdown-sdk.json) | critical | verified |
 | 2026-11-30 | Anthropic | [Claude Sonnet 4.5 retires on 2026-11-30](advisories/anthropic-claude-sonnet-4-5-retirement.json) | medium | verified |
 | 2026-11-30 | OpenAI | [Evals API shuts down on 2026-11-30](advisories/openai-evals-api-shutdown.json) | critical | verified |
+| 2026-12-01 | OpenAI | [gpt-image-1-mini, gpt-image-1.5 and chatgpt-image-latest shut down on 2026-12-01](advisories/openai-gpt-image-models-shutdown-2026-12-01.json) | high | verified |
+| 2026-12-01 | OpenAI | [gpt-image-1-mini, gpt-image-1.5 and chatgpt-image-latest shut down on 2026-12-01 (image edits)](advisories/openai-gpt-image-models-shutdown-2026-12-01-edits.json) | high | verified |
 | 2026-12-01 | Salesforce | [SOAP login() requires the Use Any API Auth permission from 2026-12-01](advisories/salesforce-soap-login-use-any-api-auth-required.json) | critical | verified |
 | 2026-12-04 | HubSpot | [Pipelines API v1 retired on 2026-12-04](advisories/hubspot-pipelines-v1-sunset.json) | high | verified |
+| 2026-12-11 | OpenAI | [gpt-5, gpt-5-mini, gpt-5-nano and o3 shut down on 2026-12-11](advisories/openai-gpt-5-o3-shutdown-2026-12-11.json) | medium | verified |
+| 2026-12-11 | OpenAI | [gpt-5, gpt-5-mini, gpt-5-nano and o3 shut down on 2026-12-11 (Responses API)](advisories/openai-gpt-5-o3-shutdown-2026-12-11-responses.json) | medium | verified |
+| 2026-12-11 | OpenAI | [gpt-5-pro and o3-pro shut down on 2026-12-11 (Responses API)](advisories/openai-gpt-5-pro-o3-pro-shutdown-2026-12-11-responses.json) | medium | verified |
 | 2026-12-15 | Salesforce | [SOAP login() from a broad IP range needs a security token from 2026-12-15](advisories/salesforce-soap-login-broad-ip-range-token-required.json) | critical | verified |
 | 2026-12-15 | Salesforce | [SOAP login() turned off in orgs with no use in six months, from 2026-12-15](advisories/salesforce-soap-login-disabled-when-unused.json) | critical | verified |
 | 2027-01-01 | Google | [Custom Search JSON API discontinued on 2027-01-01](advisories/google-custom-search-json-api-shutdown.json) | critical | verified |
@@ -86,6 +91,7 @@ Each advisory says which endpoint changed, what changed, when it took (or takes)
 | 2027-01-16 | Shopify | [Shopify Admin API version 2026-01 becomes unsupported on 2027-01-16](advisories/shopify-admin-api-2026-01-unsupported.json) | critical | verified |
 | 2027-01-21 | Meta | [Graph API v21.0 removed on 2027-01-21](advisories/meta-graph-v21-sunset.json) | high | verified |
 | 2027-01-31 | Twilio | [Twilio Notify reaches end of life on 2027-01-31](advisories/twilio-notify-end-of-life.json) | critical | verified |
+| 2027-02-01 | OpenAI | [gpt-5.5-cyber-preview is removed on 2027-02-01](advisories/openai-gpt-5-5-cyber-preview-shutdown-2027-02-01.json) | medium | verified |
 | 2027-02-01 | QuickBooks | [Refresh tokens hard-expire after five years, first ones in February 2027](advisories/quickbooks-refresh-token-five-year-hard-expiry.json) | high | verified |
 | 2027-02-23 | Meta | [Marketing API v25.0 available until 2027-02-23](advisories/meta-graph-marketing-api-v25-sunset.json) | high | verified |
 | 2027-02-26 | OpenAI | [/v1/audio/translations shuts down on 2027-02-26](advisories/openai-audio-translations-endpoint-shutdown.json) | high | verified |

@@ -1,0 +1,5 @@
+| Embeddings | `v1/embeddings` | Not supported |
+| Image generation | `v1/images/generations` | Supported |
+| Videos | `v1/videos` | Not supported |
+| Image edit | `v1/images/edits` | Supported |
+| Speech generation | `v1/audio/speech` | Not supported |
